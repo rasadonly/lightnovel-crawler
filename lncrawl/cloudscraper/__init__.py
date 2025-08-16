@@ -98,7 +98,7 @@ class CipherSuiteAdapter(HTTPAdapter):
             kwargs['server_hostname'] = self.ssl_context.server_hostname
             self.ssl_context.check_hostname = False
         else:
-            self.ssl_context.check_hostname = True
+            self.ssl_context.check_hostname = False
 
         return self.ssl_context.orig_wrap_socket(*args, **kwargs)
 
